@@ -139,7 +139,7 @@ void get_pos()
   gps_reset_parser();
 
   do {
-    if (Serial.available())
+    if (gpsSerial.available())
       valid_pos = gps_decode(gpsSerial.read());
   } while ( (millis() - timeout < VALID_POS_TIMEOUT) && ! valid_pos) ;
 
